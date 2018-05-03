@@ -6,6 +6,11 @@ pipeline {
         bat 'mvn clean package'
       }
     }
+    stage('Test') {
+      steps {
+        echo 'Hi I m testing'
+      }
+    }
   }
   environment {
     JAVA_HOME = 'C:\\Program Files\\Java\\jdk1.8.0_144'

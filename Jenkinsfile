@@ -9,6 +9,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Hi I m testing'
+        pmd(canRunOnFailed: true)
       }
     }
   }

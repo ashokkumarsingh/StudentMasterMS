@@ -49,7 +49,7 @@ import javax.xml.bind.annotation.XmlRootElement;
         this.branchname = branchname;
     }
 
-    public BranchMaster(int programid, int branchid) {
+    public BranchMaster(String programid, String branchid) {
         this.branchmasterPK = new BranchMasterPK(programid, branchid);
     }
 
@@ -85,29 +85,55 @@ import javax.xml.bind.annotation.XmlRootElement;
         this.programmaster = programmaster;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (branchmasterPK != null ? branchmasterPK.hashCode() : 0);
-        return hash;
-    }
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((branchcode == null) ? 0 : branchcode.hashCode());
+		result = prime * result + ((branchmasterPK == null) ? 0 : branchmasterPK.hashCode());
+		result = prime * result + ((branchname == null) ? 0 : branchname.hashCode());
+		result = prime * result + ((programmaster == null) ? 0 : programmaster.hashCode());
+		return result;
+	}
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof BranchMaster)) {
-            return false;
-        }
-        BranchMaster other = (BranchMaster) object;
-        if ((this.branchmasterPK == null && other.branchmasterPK != null) || (this.branchmasterPK != null && !this.branchmasterPK.equals(other.branchmasterPK))) {
-            return false;
-        }
-        return true;
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BranchMaster other = (BranchMaster) obj;
+		if (branchcode == null) {
+			if (other.branchcode != null)
+				return false;
+		} else if (!branchcode.equals(other.branchcode))
+			return false;
+		if (branchmasterPK == null) {
+			if (other.branchmasterPK != null)
+				return false;
+		} else if (!branchmasterPK.equals(other.branchmasterPK))
+			return false;
+		if (branchname == null) {
+			if (other.branchname != null)
+				return false;
+		} else if (!branchname.equals(other.branchname))
+			return false;
+		if (programmaster == null) {
+			if (other.programmaster != null)
+				return false;
+		} else if (!programmaster.equals(other.programmaster))
+			return false;
+		return true;
+	}
 
-    @Override
-    public String toString() {
-        return "jilit.clx.entities.BranchMaster[ branchmasterPK=" + branchmasterPK + " ]";
-    }
+	@Override
+	public String toString() {
+		return "BranchMaster [branchmasterPK=" + branchmasterPK + ", branchcode=" + branchcode + ", branchname="
+				+ branchname + ", programmaster=" + programmaster + "]";
+	}
+ 
     
+     
 }

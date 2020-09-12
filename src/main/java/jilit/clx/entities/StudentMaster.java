@@ -36,10 +36,10 @@ public class StudentMaster implements Serializable {
     private String name;
     @Basic(optional = false)
     @Column(name = "programid")
-    private int programid;
+    private String programid;
     @Basic(optional = false)
     @Column(name = "branchid")
-    private int branchid;
+    private String branchid;
     @Column(name = "Gender")
     private String gender;
     @Column(name = "DOB")
@@ -55,7 +55,7 @@ public class StudentMaster implements Serializable {
         this.studentid = studentid;
     }
 
-    public StudentMaster(String studentid, String enrollmentno, String name, int programid, int branchid) {
+    public StudentMaster(String studentid, String enrollmentno, String name, String programid, String branchid) {
         this.studentid = studentid;
         this.enrollmentno = enrollmentno;
         this.name = name;
@@ -87,19 +87,19 @@ public class StudentMaster implements Serializable {
         this.name = name;
     }
 
-    public int getProgramid() {
+    public String getProgramid() {
         return programid;
     }
 
-    public void setProgramid(int programid) {
+    public void setProgramid(String programid) {
         this.programid = programid;
     }
 
-    public int getBranchid() {
+    public String getBranchid() {
         return branchid;
     }
 
-    public void setBranchid(int branchid) {
+    public void setBranchid(String branchid) {
         this.branchid = branchid;
     }
 

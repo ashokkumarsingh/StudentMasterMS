@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "programid")
-    private Integer programid;
+    private String programid;
     @Basic(optional = false)
     @Column(name = "programcode")
     private String programcode;
@@ -44,21 +44,21 @@ import javax.xml.bind.annotation.XmlTransient;
     public ProgramMaster() {
     }
 
-    public ProgramMaster(Integer programid) {
+    public ProgramMaster(String programid) {
         this.programid = programid;
     }
 
-    public ProgramMaster(Integer programid, String programcode, String programname) {
+    public ProgramMaster(String programid, String programcode, String programname) {
         this.programid = programid;
         this.programcode = programcode;
         this.programname = programname;
     }
 
-    public Integer getProgramid() {
+    public String getProgramid() {
         return programid;
     }
 
-    public void setProgramid(Integer programid) {
+    public void setProgramid(String programid) {
         this.programid = programid;
     }
 

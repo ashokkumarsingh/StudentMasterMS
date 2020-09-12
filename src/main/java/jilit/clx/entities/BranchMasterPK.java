@@ -15,58 +15,67 @@ public class BranchMasterPK implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "programid")
-    private int programid;
+    private String programid;
     @Basic(optional = false)
     @Column(name = "branchid")
-    private int branchid;
+    private String branchid;
 
     public BranchMasterPK() {
     }
 
-    public BranchMasterPK(int programid, int branchid) {
+    public BranchMasterPK(String programid, String branchid) {
         this.programid = programid;
         this.branchid = branchid;
     }
 
-    public int getProgramid() {
+    public String getProgramid() {
         return programid;
     }
 
-    public void setProgramid(int programid) {
+    public void setProgramid(String programid) {
         this.programid = programid;
     }
 
-    public int getBranchid() {
+    public String getBranchid() {
         return branchid;
     }
 
-    public void setBranchid(int branchid) {
+    public void setBranchid(String branchid) {
         this.branchid = branchid;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (int) programid;
-        hash += (int) branchid;
-        return hash;
-    }
+   
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof BranchMasterPK)) {
-            return false;
-        }
-        BranchMasterPK other = (BranchMasterPK) object;
-        if (this.programid != other.programid) {
-            return false;
-        }
-        if (this.branchid != other.branchid) {
-            return false;
-        }
-        return true;
-    }
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((branchid == null) ? 0 : branchid.hashCode());
+		result = prime * result + ((programid == null) ? 0 : programid.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BranchMasterPK other = (BranchMasterPK) obj;
+		if (branchid == null) {
+			if (other.branchid != null)
+				return false;
+		} else if (!branchid.equals(other.branchid))
+			return false;
+		if (programid == null) {
+			if (other.programid != null)
+				return false;
+		} else if (!programid.equals(other.programid))
+			return false;
+		return true;
+	}
 
     @Override
     public String toString() {

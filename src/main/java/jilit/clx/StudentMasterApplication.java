@@ -8,6 +8,7 @@ public class StudentMasterApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StudentMasterApplication.class,args);
+		System.out.println("I am again deployed....");
 	}
 
 }

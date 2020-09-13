@@ -2,7 +2,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>jilit.clx</groupId>
   <artifactId>StudentMasterMS</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>Rest</name>
   
   <parent>
@@ -24,4 +23,6 @@
     <artifactId>mysql-connector-java</artifactId>
   </dependency>
 </dependencies>
+	<packaging>war</packaging>
+	<version>1</version>
 </project>

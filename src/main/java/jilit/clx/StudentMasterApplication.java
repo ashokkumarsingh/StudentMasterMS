@@ -11,4 +11,5 @@ public class StudentMasterApplication {
 		System.out.println("I am again deployed....");
 	}
 
+	
 }
